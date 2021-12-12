@@ -9,3 +9,17 @@ select,
 textarea {
   max-width: 280px;
 }
+
+a {
+  color: #727171;
+  text-decoration: none;
+}
+
+.title a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.h3 {
+  font-size: 80%;
+}

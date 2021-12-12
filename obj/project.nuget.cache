@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "sNN7weKSI5/+YvCQeYplevYl9fheD14osZd+U2S9w2diZzovQwTjBYI8aYKyMx7uPVonr2dm8x5N2oDBQ8kMjg==",
+  "dgSpecHash": "vD76nOD/U7wBndGWKrbiUYmnNAFO0YufZvg8GbUCTcY7LqWvBYuQgy4+g+ThAIdA38sPMbg23aKCrwpbBRup9w==",
   "success": true,
-  "projectFilePath": "F:\\Andre\\Canada 2.0\\NSCC\\Year 2\\Semester 1\\INET2005 - ASP.NET Core\\Project 3\\launchpadApp\\launchpadApp.csproj",
+  "projectFilePath": "C:\\Users\\andre\\Desktop\\launchpadApp\\launchpadApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andre\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\fontawesome5\\2.1.6\\fontawesome5.2.1.6.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",

@@ -12,7 +12,7 @@ namespace launchpadApp.Models {
         public string name {get; set;}
         [Required]
         [Url]
-        public string href {get; set;}
+        public string url {get; set;}
         public bool pinned {get; set;}
     }
 }

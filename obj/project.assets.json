@@ -16,6 +16,15 @@
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
         }
       },
+      "FontAwesome5/2.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/FontAwesome5.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/FontAwesome5.dll": {}
+        }
+      },
       "Google.Protobuf/3.11.4": {
         "type": "package",
         "dependencies": {
@@ -1952,6 +1961,64 @@
         "lib/netstandard2.0/BouncyCastle.Crypto.xml",
         "lib/xamarinios/BouncyCastle.Crypto.dll",
         "lib/xamarinios/BouncyCastle.Crypto.xml"
+      ]
+    },
+    "FontAwesome5/2.1.6": {
+      "sha512": "K/fuziBuB4B7D3ChlaBEaTJSuX0bk0PtyOQ3/TrsoL/fuAJnXoZrAwbNw+XYuhqLgvEq5SrVwTWPsbiY0gVkBw==",
+      "type": "package",
+      "path": "fontawesome5/2.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome5.2.1.6.nupkg.sha512",
+        "fontawesome5.nuspec",
+        "icon.png",
+        "lib/net40/FontAwesome5.Net.dll",
+        "lib/net40/FontAwesome5.Net.xml",
+        "lib/net40/FontAwesome5.dll",
+        "lib/net40/FontAwesome5.xml",
+        "lib/net462/FontAwesome5.Net.dll",
+        "lib/net462/FontAwesome5.Net.xml",
+        "lib/net462/FontAwesome5.dll",
+        "lib/net462/FontAwesome5.xml",
+        "lib/net472/FontAwesome5.Net.dll",
+        "lib/net472/FontAwesome5.Net.xml",
+        "lib/net472/FontAwesome5.dll",
+        "lib/net472/FontAwesome5.xml",
+        "lib/net5.0-windows7.0/FontAwesome5.Net.dll",
+        "lib/net5.0-windows7.0/FontAwesome5.Net.xml",
+        "lib/net5.0-windows7.0/FontAwesome5.dll",
+        "lib/net5.0-windows7.0/FontAwesome5.xml",
+        "lib/net5.0/FontAwesome5.dll",
+        "lib/net5.0/FontAwesome5.xml",
+        "lib/net6.0-windows10.0.19041.0/FontAwesome5.WinUI.dll",
+        "lib/net6.0-windows10.0.19041.0/FontAwesome5.WinUI.pri",
+        "lib/net6.0-windows10.0.19041.0/FontAwesome5.WinUI.xml",
+        "lib/net6.0-windows10.0.19041.0/FontAwesome5.WinUI/Fonts/Font Awesome 5 Brands-Regular-400.otf",
+        "lib/net6.0-windows10.0.19041.0/FontAwesome5.WinUI/Fonts/Font Awesome 5 Free-Regular-400.otf",
+        "lib/net6.0-windows10.0.19041.0/FontAwesome5.WinUI/Fonts/Font Awesome 5 Free-Solid-900.otf",
+        "lib/net6.0-windows10.0.19041.0/FontAwesome5.dll",
+        "lib/net6.0-windows10.0.19041.0/FontAwesome5.xml",
+        "lib/net6.0-windows7.0/FontAwesome5.Net.dll",
+        "lib/net6.0-windows7.0/FontAwesome5.Net.xml",
+        "lib/net6.0-windows7.0/FontAwesome5.dll",
+        "lib/net6.0-windows7.0/FontAwesome5.xml",
+        "lib/netcoreapp3.1/FontAwesome5.Net.dll",
+        "lib/netcoreapp3.1/FontAwesome5.Net.xml",
+        "lib/netcoreapp3.1/FontAwesome5.dll",
+        "lib/netcoreapp3.1/FontAwesome5.xml",
+        "lib/netstandard1.4/FontAwesome5.dll",
+        "lib/netstandard1.4/FontAwesome5.xml",
+        "lib/netstandard2.1/FontAwesome5.dll",
+        "lib/netstandard2.1/FontAwesome5.xml",
+        "lib/uap10.0/FontAwesome5.UWP.XML",
+        "lib/uap10.0/FontAwesome5.UWP.dll",
+        "lib/uap10.0/FontAwesome5.UWP.pri",
+        "lib/uap10.0/FontAwesome5.UWP/Fonts/Font Awesome 5 Brands-Regular-400.otf",
+        "lib/uap10.0/FontAwesome5.UWP/Fonts/Font Awesome 5 Free-Regular-400.otf",
+        "lib/uap10.0/FontAwesome5.UWP/Fonts/Font Awesome 5 Free-Solid-900.otf",
+        "lib/uap10.0/FontAwesome5.dll",
+        "lib/uap10.0/FontAwesome5.xml"
       ]
     },
     "Google.Protobuf/3.11.4": {
@@ -6649,6 +6716,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "FontAwesome5 >= 2.1.6",
       "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.12",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.12",
@@ -6662,11 +6730,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Andre\\Canada 2.0\\NSCC\\Year 2\\Semester 1\\INET2005 - ASP.NET Core\\Project 3\\launchpadApp\\launchpadApp.csproj",
+      "projectUniqueName": "C:\\Users\\andre\\Desktop\\launchpadApp\\launchpadApp.csproj",
       "projectName": "launchpadApp",
-      "projectPath": "F:\\Andre\\Canada 2.0\\NSCC\\Year 2\\Semester 1\\INET2005 - ASP.NET Core\\Project 3\\launchpadApp\\launchpadApp.csproj",
+      "projectPath": "C:\\Users\\andre\\Desktop\\launchpadApp\\launchpadApp.csproj",
       "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "F:\\Andre\\Canada 2.0\\NSCC\\Year 2\\Semester 1\\INET2005 - ASP.NET Core\\Project 3\\launchpadApp\\obj\\",
+      "outputPath": "C:\\Users\\andre\\Desktop\\launchpadApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6693,6 +6761,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "FontAwesome5": {
+            "target": "Package",
+            "version": "[2.1.6, )"
+          },
           "Microsoft.AspNetCore.Session": {
             "target": "Package",
             "version": "[2.2.0, )"

@@ -22,10 +22,11 @@ namespace userAuthentication.Controllers {
             } else {
                 ViewData["feedback"] = "Incorrect login. Please try again...";
             }
+            
             // generate new hashed pass
             // webLogin.newPass();
 
-            return View("Index");
+            return View("Admin");
         }
     }
 }

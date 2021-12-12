@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Andre\\Canada 2.0\\NSCC\\Year 2\\Semester 1\\INET2005 - ASP.NET Core\\Project 3\\launchpadApp\\launchpadApp.csproj": {}
+    "C:\\Users\\andre\\Desktop\\launchpadApp\\launchpadApp.csproj": {}
   },
   "projects": {
-    "F:\\Andre\\Canada 2.0\\NSCC\\Year 2\\Semester 1\\INET2005 - ASP.NET Core\\Project 3\\launchpadApp\\launchpadApp.csproj": {
+    "C:\\Users\\andre\\Desktop\\launchpadApp\\launchpadApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Andre\\Canada 2.0\\NSCC\\Year 2\\Semester 1\\INET2005 - ASP.NET Core\\Project 3\\launchpadApp\\launchpadApp.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\Desktop\\launchpadApp\\launchpadApp.csproj",
         "projectName": "launchpadApp",
-        "projectPath": "F:\\Andre\\Canada 2.0\\NSCC\\Year 2\\Semester 1\\INET2005 - ASP.NET Core\\Project 3\\launchpadApp\\launchpadApp.csproj",
+        "projectPath": "C:\\Users\\andre\\Desktop\\launchpadApp\\launchpadApp.csproj",
         "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "F:\\Andre\\Canada 2.0\\NSCC\\Year 2\\Semester 1\\INET2005 - ASP.NET Core\\Project 3\\launchpadApp\\obj\\",
+        "outputPath": "C:\\Users\\andre\\Desktop\\launchpadApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FontAwesome5": {
+              "target": "Package",
+              "version": "[2.1.6, )"
+            },
             "Microsoft.AspNetCore.Session": {
               "target": "Package",
               "version": "[2.2.0, )"

@@ -1,25 +1,40 @@
-﻿@model LinkManager;
+﻿@model CategoryManager;
 
-<div class="row mb-2">
-    <div class="col">
-        <h4>Technology</h2>
-    </div>
-    <div class="col">
-        <h4>School</h2>
+<div class="container">
 
-    </div>
-    <div class="col">
-        <h4>Play</h2>
-
-    </div>
-    <div class="col">
-        <h4>Data</h2>
+    <div class="row my-3">
+        <div class="col title">
+            <h2>_launchP<a href='/login'>ad.</a></h2>
+        </div>
     </div>
 
-</div>
-
-<div class="row">
-    <div class="col text-info">
-        @ViewData["feedback"]
+    <div class="row mb-2">
+        @foreach (var category in @Model.categories)  {
+            <div class="col links__category">
+                <div class='link__category-header'>
+                    <h4>@category.name</h4>     
+                </div>
+            @foreach (var link in @Model.links)  {
+                var dash = false;
+                if (category.categoryID == link.categoryID && link.pinned) {
+                    <div class='links__link'>
+                        <img src='https://www.google.com/s2/favicons?domain_url=@link.url'>
+                        <a href='@link.url' target='_blank' rel="noopener noreferer">@link.name</a>
+                    </div>
+                    dash = true;
+                }
+                if (dash)  {
+                    <hr>
+                }
+                if (category.categoryID == link.categoryID && !link.pinned) {
+                    <div class='links__link'>
+                        <img src='https://www.google.com/s2/favicons?domain_url=@link.url'>
+                        <a href='@link.url' target='_blank' rel="noopener noreferer">@link.name</a>
+                    </div>
+                }
+            }
+            </div>
+        }
     </div>
+
 </div>

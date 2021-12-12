@@ -18,6 +18,7 @@ namespace launchpadApp.Models {
         }
 
         // -------------------------------------------------- public methods
+        // list for dropdown
         public SelectList getSelectList() {
             // get the list of the data in the table
             List<Link> listData = tblLink.OrderBy(c => c.categoryID).ToList();

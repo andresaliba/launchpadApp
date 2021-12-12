@@ -31,10 +31,13 @@ INSERT INTO `tblLink` (`id`, `categoryID`, `name`, `url`, `pinned`) VALUES
 (3, 1, "Linkedin", "https://linkedin.com", 1),
 (4, 2, "NSCC", "https://nscc.ca", 1),
 (5, 2, "Trello", "https://trello.com", 1),
-(6, 3, "Facebook", "https://facebook.com", 1),
-(7, 3, "Youtube", "https://youtube.com", 1),
-(8, 4, "Tangerine Bank", "https://tangerine.ca", 1),
-(9, 4, "Google Maps", "https://google.com", 1);
+(6, 2, "AWS Educate Console", "https://labs.vocareum.com", 0),
+(7, 2, "VitalSource", "https://vitalsource.com", 0),
+(8, 2, "Google Analytics", "https://analytics.google.com", 0),
+(9, 3, "Facebook", "https://facebook.com", 1),
+(10, 3, "Youtube", "https://youtube.com", 1),
+(11, 4, "Tangerine Bank", "https://tangerine.ca", 1),
+(12, 4, "Google Maps", "https://google.com", 1);
 
 -- Login TABLE
 CREATE TABLE IF NOT EXISTS `tblLogin` (
