@@ -1,7 +1,6 @@
 ﻿using System;
 using launchpadApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
 
 namespace launchpadApp.Controllers {
 
@@ -16,9 +15,6 @@ namespace launchpadApp.Controllers {
         }
 
         public IActionResult Index() {
-            // if (HttpContext.Session.GetString("auth") != "true") {
-            //     return RedirectToAction("Index","Login");
-            // }
             return View(categoryManager);            
         }
 

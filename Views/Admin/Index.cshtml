@@ -1,55 +1,72 @@
-﻿@model CategoryManager;
+﻿@model CategoryManager
 
-<div class="row mb-2">
+@* Header *@
+<div class="row my-3">
+    <div class="col title">
+        <span class='h2'>_launchPad.</span>
+        <span class='h3'>administration</span>
+    </div>
+</div>
+
+@* Body *@
+<div class="row mb-2 links">
         @foreach (var category in @Model.categories)
         {
-            <div class="col">
+            <div class="col links__category">
                 <div class='row mb-3'>
-                    <h4>@category.name</h4>
-                    <form method='post'>
-                        <input type="hidden" name='name' value='@category.name'>
-                        <input type="hidden" name='categoryID' value='@category.categoryID'>
-                        <button type='submit' class='bi-plus-lg btn btn-outline-danger' asp-controller="Admin" asp-action="AddCategory">Plus</button>
-                        <button type='submit' class='bi-pencil mr-1 btn btn-outline-danger' asp-controller="Admin" asp-action="EditCategory">Pencil</button>
-                    </form>
+
+                    <div class='link__category-header'>
+                        <h4>@category.name</h4>
+                    </div>
+                    
+                    @* buttons *@
+                    <div class='link__category-buttons'>
+                        <form method='post'>
+                            <input type="hidden" name='name' value='@category.name'>
+                            <input type="hidden" name='categoryID' value='@category.categoryID'>
+                            <button type='submit' class='btn btn-warning btn-sm' asp-controller="Admin" asp-action="AddLink"><i class='fas fa-plus'></i></button>
+                            <button type='submit' class='btn btn-warning btn-sm' asp-controller="Admin" asp-action="EditCategory"><i class='fas fa-pencil-alt'></i></button>
+                        </form>
+                    </div>
+
                 </div>
             @foreach (var link in @Model.links)
             {
                 var dashes = false;
-                if (category.categoryID == link.categoryID && link.pinned)
-                {
-                <div class='mb-2'>
+                if (category.categoryID == link.categoryID && link.pinned)  {
+
                     <form method='post'>
+                     <div class='mb-2 links__link'>
                         <input type="hidden" name='id' value='@link.id'>
                         <input type="hidden" name='name' value='@link.name'>
                         <input type="hidden" name='url' value='@link.url'>
                         <input type="hidden" name='categoryID' value='@category.categoryID'>
-                        <button type='submit' class='bi bi-pencil  btn btn-outline-danger' asp-controller="Admin" asp-action="EditLink">Pencil</button>
-                        <button type='submit' class='bi-trash btn btn-outline-danger' asp-controller="Admin" asp-action="DeleteLink">Trash</button>
-                        <img src='https://www.google.com/s2/favicons?domain_url=@link.url'> <a href='@link.url' target='_blank' rel="noopener noreferer "></a>
+                        <button type='submit' class='btn btn-warning btn-sm' asp-controller="Admin" asp-action="EditLink"><i class='fas fa-pencil-alt'></i></button>
+                        <button type='submit' class='btn btn-warning btn-sm' asp-controller="Admin" asp-action="DeleteLink"><i class='fas fa-trash-alt'></i></button>
+                        <img src='https://www.google.com/s2/favicons?domain_url=@link.url'>
+                        <a href='@link.url' target='_blank' rel="noopener noreferer">@link.name</a>
+                     </div>               
                     </form>
-                </div>               
                 dashes = true;     
                 }
-                if (dashes)
-                {
+                if (dashes) {
                     <hr>
                 }
-                if (category.categoryID == link.categoryID && !link.pinned)
-                {
-                <div class='mb-3'>
-                    <form method='post'>
-                        <input type="hidden" name='id' value='@link.id'>
-                        <input type="hidden" name='name' value='@link.name'>
-                        <input type="hidden" name='url' value='@link.url'>
-                        <input type="hidden" name='categoryID' value='@category.categoryID'>
-                        <button type='submit' class='bi-pencil mr-1 btn btn-outline-danger' asp-controller="Admin" asp-action="EditCategory"></button>
-                        <button type='submit' class='bi-trash btn btn-outline-danger' asp-controller="Admin" asp-action="DeleteLink"></button>
-                    </form>
-                </div>               
+                if (category.categoryID == link.categoryID && !link.pinned) {
+                    <div class='mb-3'>
+                        <form method='post'>
+                            <input type="hidden" name='id' value='@link.id'>
+                            <input type="hidden" name='name' value='@link.name'>
+                            <input type="hidden" name='url' value='@link.url'>
+                            <input type="hidden" name='categoryID' value='@category.categoryID'>
+                            <button type='submit' class='btn btn-warning btn-sm' asp-controller="Admin" asp-action="EditLink"><i class='fas fa-pencil-alt'></i></button>
+                            <button type='submit' class='btn btn-warning btn-sm' asp-controller="Admin" asp-action="DeleteLink"><i class='fas fa-trash-alt'></i></button>
+                            <img src='https://www.google.com/s2/favicons?domain_url=@link.url'>
+                            <a href='@link.url' target='_blank' rel="noopener noreferer">@link.name</a>
+                        </form>
+                    </div>               
                 }
             }
-
             </div>
         }
 </div>

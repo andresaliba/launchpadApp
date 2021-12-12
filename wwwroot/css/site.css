@@ -18,8 +18,14 @@ a {
 .title a {
   color: rgb(0, 0, 0);
   text-decoration: none;
+  max-width: fit-content;
+  /* margin-right: 2px; */
 }
 
 .h3 {
   font-size: 80%;
+}
+
+.link__category-header {
+  margin-right: 10px;
 }

@@ -18,15 +18,15 @@ namespace userAuthentication.Controllers {
 
             // attempt to login!
             if (webLogin.unlock()) {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Admin");
             } else {
                 ViewData["feedback"] = "Incorrect login. Please try again...";
             }
-            
+
             // generate new hashed pass
             // webLogin.newPass();
 
-            return View("Admin");
+            return View("Index");
         }
     }
 }
