@@ -26,8 +26,7 @@ namespace launchpadApp
             services.AddControllersWithViews();
             // -------------------------------------------------------
             // set up the model to be a service that can be injected where needed
-            services.AddDbContext<launchpadApp.Models.LinkManager>();
-            services.AddDbContext<launchpadApp.Models.CategoryManager>();
+            services.AddDbContext<launchpadApp.Models.Manager>();
             // -------------------------------------------------------
 
             // ---------------------------- added to enable session variables

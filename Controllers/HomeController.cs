@@ -6,16 +6,15 @@ namespace launchpadApp.Controllers {
 
     public class HomeController : Controller {
 
-        private LinkManager linkManager;
-        private CategoryManager categoryManager;
+        private Manager manager;
 
-        public HomeController(CategoryManager myManager) {
-            categoryManager = myManager;
+        public HomeController(Manager myManager) {
+            manager = myManager;
 
         }
 
         public IActionResult Index() {
-            return View(categoryManager);            
+            return View(manager);            
         }
 
     }

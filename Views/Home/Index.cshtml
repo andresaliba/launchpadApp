@@ -1,4 +1,4 @@
-﻿@model CategoryManager;
+﻿@model Manager;
 
 <div class="row my-3">
     <div class="col title">
@@ -6,34 +6,46 @@
     </div>
 </div>
 
-<div class="row mb-2 links">
-    @foreach (var category in @Model.categories)  {
+<div class="row my-2 links">
+    @foreach (var category in @Model.categories) {
 
         <div class="col links__category">
             
             <div class='link__category-header'>
-                <h4>@category.name</h4>     
+                <h4>@category.categoryName</h4>     
             </div>
 
-        @foreach (var link in @Model.links)  {
-            var dash = false;
-            if (category.categoryID == link.categoryID && link.pinned) {
-                <div class='links__link'>
-                    <img src='https://www.google.com/s2/favicons?domain_url=@link.url'>
-                    <a href='@link.url' target='_blank' rel="noopener noreferer">@link.name</a>
-                </div>
-                dash = true;
+            @* check if there are links in category *@
+            @if (Model.links.Count > 0) {   
+                @* check if there are pinned links *@
+                @if (Model.pinnedList.Count > 0) {
+                    @* for each pinned link, generate new hyperlink *@
+                    @foreach (var pinnedLink in Model.pinnedList) {
+                        @* populate correct category *@
+                        @if (category.categoryID == pinnedLink.categoryID) {    
+                        <div class='links__link'>
+                            <img src='https://www.google.com/s2/favicons?domain_url=@pinnedLink.url'>
+                            <a href='@pinnedLink.url' target='_blank' rel="noopener noreferer">@pinnedLink.linkName</a>
+                        </div>
+                        }   
+                    }
+
+                    @if (Model.pinnedList.Where(l => l.categoryID == category.categoryID).ToList().Count > 0) {
+                        <hr>
+                    }   
+                }
+
+                @foreach (var link in Model.unpinnedList) {
+
+                    @* Lists links by category *@
+                    @if (category.categoryID == link.categoryID) {
+                        <div class='links__link'>
+                            <img src='https://www.google.com/s2/favicons?domain_url=@link.url'>
+                            <a href='@link.url' target='_blank' rel="noopener noreferer">@link.linkName</a>
+                        </div>
+                    }
+                }
             }
-            if (dash)  {
-                <hr>
-            }
-            if (category.categoryID == link.categoryID && !link.pinned) {
-                <div class='links__link'>
-                    <img src='https://www.google.com/s2/favicons?domain_url=@link.url'>
-                    <a href='@link.url' target='_blank' rel="noopener noreferer">@link.name</a>
-                </div>
-            }
-        }
         </div>
     }
 </div>

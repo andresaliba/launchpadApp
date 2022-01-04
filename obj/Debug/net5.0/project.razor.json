@@ -15634,8 +15634,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\andre\\Desktop\\launchpadApp\\Views\\Admin\\Add.cshtml",
-      "TargetPath": "Views\\Admin\\Add.cshtml",
+      "FilePath": "c:\\Users\\andre\\Desktop\\launchpadApp\\Views\\Admin\\AddLink.cshtml",
+      "TargetPath": "Views\\Admin\\AddLink.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15659,13 +15659,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\andre\\Desktop\\launchpadApp\\Views\\Admin\\EditCategory.cshtml",
-      "TargetPath": "Views\\Admin\\EditCategory.cshtml",
+      "FilePath": "c:\\Users\\andre\\Desktop\\launchpadApp\\Views\\Admin\\DeleteLink.cshtml",
+      "TargetPath": "Views\\Admin\\DeleteLink.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\andre\\Desktop\\launchpadApp\\Views\\Admin\\Delete.cshtml",
-      "TargetPath": "Views\\Admin\\Delete.cshtml",
+      "FilePath": "c:\\Users\\andre\\Desktop\\launchpadApp\\Views\\Admin\\EditCategory.cshtml",
+      "TargetPath": "Views\\Admin\\EditCategory.cshtml",
       "FileKind": "mvc"
     },
     {

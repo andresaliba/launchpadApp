@@ -29,3 +29,13 @@ a {
 .link__category-header {
   margin-right: 10px;
 }
+
+.icon {
+  width: 100%;
+}
+
+.deleteLink .row {
+  margin-left: 3px;  
+}
+
+ 

@@ -1,0 +1,44 @@
+@model Link;
+
+<div class='deleteLink'>
+    @* Title *@
+    <div class="deleteLink__title">
+        <span class='h2'>_launchPad.</span>
+        <span class='h3'>administration</span>
+        <a asp-controller="Login" asp-action="Logout"><input type="submit" value="Logout" class="btn btn-light"/></a>
+        <span id="lblExpire" class="text-warning" style="margin-left:20px"></span>
+    </div>
+
+    @* Header *@
+    <div class="deleteLink__header">
+        <h1 class="text-warning">Delete Link.</h1>
+        Are you sure you want to delete the following link?
+        <br><br>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-">
+         <img class="" src="https://www.google.com/s2/favicons?domain_url=@Model.url">
+        </div>
+        <div class="col">
+            <h5>@Model.linkName | @Model.url</h5>
+        </div>
+    </div>  
+    <br>
+    
+     @* Form *@
+    <form method="post" asp-controller="Admin" asp-action="DeleteLinkSubmit">
+        <div class="form-group">
+            <input type="hidden" asp-for="@Model.id" value="@Model.id">
+            <input type="submit" class="btn btn-warning" value="Delete" />
+            <a asp-controller="Admin" asp-action="Index"><input type="button" class="btn btn-warning" value="Cancel" /></a> 
+        </div>
+    </form>
+</div>
+
+@section scripts {
+    <script>
+        startAutoLogout();
+    </script>
+}

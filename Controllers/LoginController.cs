@@ -28,5 +28,11 @@ namespace userAuthentication.Controllers {
 
             return View("Index");
         }
+        
+        public IActionResult Logout() {
+            WebLogin webLogin = new WebLogin(Connection.CONNECTION_STRING, HttpContext);
+            webLogin.logout();
+            return View("Index");
+        }
     }
 }

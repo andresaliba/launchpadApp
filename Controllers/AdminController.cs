@@ -2,53 +2,60 @@
 using launchpadApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using System.Linq;
 
 namespace launchpadApp.Controllers {
 
     public class AdminController : Controller {
 
-        private CategoryManager categoryManager;
-        private LinkManager linkManager;
+        private Manager manager;
 
-        public AdminController(CategoryManager myManager) {
-            categoryManager = myManager;
+        public AdminController(Manager myManager) {
+            manager = myManager;
         }
 
         public IActionResult Index() {
             if (HttpContext.Session.GetString("auth") != "true") {
                 return RedirectToAction("Index","Login");
             }
-            return View(categoryManager);            
-        }
-
-        // -------------------------------- ADD LINK
-        public IActionResult AddLink(string name, int id) {
+            return View(manager);            
+        }   
+ 
+        // -------------------------------- ADD CATEGORY LINK
+        public IActionResult AddLink(string category, string categoryName) {
             if (HttpContext.Session.GetString("auth") != "true") {
                 return RedirectToAction("Index","Login");
             }
+            // get categories list
+            ViewBag.SelectList = manager.getCategoryList();
             // construct Link object that will be used to add a new link
             Link link = new Link();
+            // set category ID to the one clicked
+            link.categoryID = Convert.ToInt32(category);
+            link.linkName = categoryName;
             // pass it into the view for populating
             return View(link);
         }
-
-        [HttpPost]
+ 
+        [HttpPost] 
         public IActionResult AddLinkSubmit(Link link) {
             if (HttpContext.Session.GetString("auth") != "true") {
                 return RedirectToAction("Index","Login");
             }
-            categoryManager.Add(link);
-            categoryManager.SaveChanges();
+            // data validation
+            if (!ModelState.IsValid) return RedirectToAction("index");
+            // Add Link object to manager and save
+            manager.Add(link);
+            manager.SaveChanges();
             return RedirectToAction("Index");
         }
 
         // --------------------------------  EDIT CATEGORY
-        public IActionResult EditCategory(string name, int id) {
+        public IActionResult EditCategory(int id) {
             if (HttpContext.Session.GetString("auth") != "true") {
                 return RedirectToAction("Index","Login");
             }
-           Category category = new Category();
-           category.categoryID = id;
+            Category category =  manager.getCategoryByID(id);
             return View(category);
         }
 
@@ -57,40 +64,42 @@ namespace launchpadApp.Controllers {
             if (HttpContext.Session.GetString("auth") != "true") {
                 return RedirectToAction("Index","Login");
             }
-            categoryManager.Update(category);
-            categoryManager.SaveChanges();
+            // data validation
+            if (!ModelState.IsValid) return RedirectToAction("index");
+            manager.Update(category);
+            manager.SaveChanges();
             return RedirectToAction("Index");
         }
-        
+         
         // -------------------------------- EDIT LINK
-        public IActionResult EditLink(string name, int id) {
+        public IActionResult EditLink(int id) {
             if (HttpContext.Session.GetString("auth") != "true") {
                 return RedirectToAction("Index","Login");
             }
-           Category category = new Category();
-           category.categoryID = id;
-            return View(category);
+            // get links list
+            ViewBag.SelectList = manager.getCategoryList();
+            Link link = manager.getLinkByID(id);
+            return View(link);
         }
 
-        [HttpPost]
+        [HttpPost]             
         public IActionResult EditLinkSubmit(Link link) {
             if (HttpContext.Session.GetString("auth") != "true") {
                 return RedirectToAction("Index","Login");
-            }
-            categoryManager.Update(link);
-            categoryManager.SaveChanges();
+            }      
+            // data validation
+            if (!ModelState.IsValid) return RedirectToAction("index");
+            manager.Update(link);
+            manager.SaveChanges();
             return RedirectToAction("Index");
         }
 
         // -------------------------------- DELETE LINK
-        public IActionResult DeleteLink(string name, int id, string url) {
+        public IActionResult DeleteLink(int id) {
             if (HttpContext.Session.GetString("auth") != "true") {
                 return RedirectToAction("Index","Login");
             }
-           Link link  = new Link();
-           link.name = name;
-           link.id = id;
-           link.url = url;
+            Link link = manager.getLinkByID(id);
             return View(link);
         }
 
@@ -99,9 +108,10 @@ namespace launchpadApp.Controllers {
             if (HttpContext.Session.GetString("auth") != "true") {
                 return RedirectToAction("Index","Login");
             }
-            linkManager.Remove(link);
-            linkManager.SaveChanges();
+            manager.Remove(link);
+            manager.SaveChanges();
             return RedirectToAction("index");
         }
+
     }
 }

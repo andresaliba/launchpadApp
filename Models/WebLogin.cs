@@ -99,6 +99,9 @@ namespace userAuthentication.Models {
 			return _hash;
 		}
 
+		public void logout() {
+			context.Session.Clear();
+		}
 		// ------------------------------------------------------- private methods
 		private string getSalt() {
 			// generate a 128-bit salt using a secure PRNG (pseudo-random number generator)
