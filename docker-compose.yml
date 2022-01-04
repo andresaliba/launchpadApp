@@ -1,7 +1,21 @@
 version: '3.7'
 
 services:
-  
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: dotnet-server
+    container_name: my-dotnet-server
+    volumes:
+      - ./:/source/lauchpadApp
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+
   mysql:
     build:
       context: ./mysql
