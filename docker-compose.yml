@@ -8,7 +8,7 @@ services:
     image: dotnet-server
     container_name: my-dotnet-server
     volumes:
-      - ./:/source/lauchpadApp
+      - ./:/source/aspnetapp
     ports:
       - "80:80"
     depends_on:
